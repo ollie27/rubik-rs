@@ -524,7 +524,7 @@ impl Coordinate {
 
     fn set_prunning(arr: &mut [i8], i: usize, value: i8) {
         if i & 1 == 0 {
-            arr[i / 2] &= 0xf0 | value;
+            arr[i / 2] &= (0xf0_u8 as i8) | value;
         } else {
             arr[i / 2] &= 0x0f | (value << 4);
         }
